@@ -4,7 +4,7 @@ namespace game_store_backend.Dtos;
 
 public record UpdateGameDto(
     [Required][StringLength(50)] string Name,
-    [Required] string Genre,
+    [Range(1, 50)] int GenreId,
     [Required] DateOnly ReleaseDate,
-    [Required][Range(0, 100)] decimal Price
+    [Range(0, 100)] decimal Price
 );
